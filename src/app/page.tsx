@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900">
+      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
         <header className="max-w-5xl w-full gap-5 font-mono">
           <div className="flex flex-col items-center">
             <div className="text-white flex flex-col gap-2 text-center">
@@ -50,7 +50,7 @@ export default function Home() {
               <h3>I am Kalam Mahardhika as <span className="text-sky-400">Computer Science Student & Software Developer</span></h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, incidunt error? Ad, harum quis ab voluptas repellat quos architecto voluptatibus labore delectus. Distinctio velit tempore odit et quas ex totam labore odio! Deleniti ducimus qui assumenda iste, inventore quo commodi.</p>
             </div>
-            <div className=" flex gap-4">
+            <div className="flex gap-4">
               <Button className="mt-4" variant="outline">
                 <MdDownload className="h-4 w-4 mr-2" /> Download CV
               </Button>
@@ -63,13 +63,13 @@ export default function Home() {
         <MdKeyboardDoubleArrowDown className="h-[2rem] w-[2rem] text-white text-center absolute bottom-10 animate-bounce"/>
       </section>
 
-      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900">
+      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
         <main className="max-w-5xl w-full flex flex-col gap-y-10 font-mono">
           <div className="flex flex-col text-center gap-3">
             <h1 className="text-3xl text-white">My Projects</h1>
             <p className="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas, quis assumenda velit tempore ducimus!</p>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-3 grid-cols-1 gap-4">
             {projects.map((project, index) => (
               <Card key={index} className="border-none shadow-sm shadow-sky-600 bg-neutral-800">
                 <CardHeader>
@@ -96,6 +96,10 @@ export default function Home() {
             ))}
           </div>
         </main>
+      </section>
+
+      <section className="flex flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
+        <p className="text-white font-mono">Made with random inspiration🐲</p>
       </section>
     </>
   )
