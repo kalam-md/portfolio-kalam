@@ -2,6 +2,7 @@ import { MdDownload, MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaLaravel } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
 import Image from 'next/image'
 
@@ -38,7 +39,40 @@ export default function Home() {
         { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-200" },
       ],
     },
-  ];
+  ]
+
+  const experiences = [
+    {
+      title: "Experience 1",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      duration: "6 Month Internship",
+      details: [
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+      ],
+    },
+    {
+      title: "Experience 2",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      duration: "7 Month Internship",
+      details: [
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+      ],
+    },
+    {
+      title: "Experience 3",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      duration: "3 Month Internship",
+      details: [
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+      ],
+    },
+  ]
 
   return (
     <>
@@ -65,8 +99,8 @@ export default function Home() {
 
       <section className="flex min-h-screen flex-col  items-center py-8 bg-neutral-900 sm:px-0 px-4">
         <header className="max-w-5xl w-full flex flex-col gap-5 font-mono mt-10">
-          <h1 className="text-4xl text-white text-center">Hi There I am Kalam Mahardhika👋🏻</h1>
-          <div className="relative w-full h-[45vh] rounded-sm flex justify-center">
+          <h1 className="sm:text-4xl text-xl text-white text-center">Hi There I am Kalam Mahardhika👋🏻</h1>
+          <div className="relative w-full sm:h-[45vh] rounded-sm flex justify-center">
             <Image
               src="/hero.jpg"
               width={700}
@@ -74,9 +108,9 @@ export default function Home() {
               alt="Hero"
               className="rounded-sm w-full h-full bg-center object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-sky-700 opacity-85 rounded-sm"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-sky-700 opacity-85 rounded-sm"></div> */}
           </div>
-          <h1 className="text-md text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit ullam animi autem inventore delectus numquam rem eos, nihil cumque!</h1>
+          <h1 className="sm:text-md text-neutral-400 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit ullam animi autem inventore delectus numquam rem eos, nihil cumque!</h1>
         </header>
         <MdKeyboardDoubleArrowDown className="h-[2rem] w-[2rem] text-white text-center absolute bottom-10 animate-bounce"/>
       </section>
@@ -123,23 +157,38 @@ export default function Home() {
             <p className="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas, quis assumenda velit tempore ducimus!</p>
           </div>
           <div className="flex flex-col gap-4">
-            <Card className="border-none shadow-sm shadow-sky-600 bg-neutral-800">
-              <CardHeader className="flex flex-col items-start gap-4 space-y-0">
-                <div className="space-y-1">
-                  <p className="font-medium text-white text-xl">Intern 1</p>
-                  <CardDescription className="text-neutral-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis eaque error minima hic molestias neque magni vitae nihil unde, quia odio harum laudantium aliquid ipsa repellat illo maxime incidunt eligendi eveniet quae sed consequuntur sint quis. Odit, vero amet!
-                  </CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex space-x-4 text-sm text-muted-foreground text-white">
-                  <p>
-                    6 Month Internship
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            {experiences.map((experience, index) => (
+              <Card key={index} className="border-none shadow-sm shadow-sky-600 bg-neutral-800">
+                <CardHeader className="flex flex-col items-start gap-4 space-y-0">
+                  <div className="space-y-1">
+                    <p className="font-medium text-white text-xl">{ experience.title }</p>
+                    <CardDescription className="text-neutral-400">
+                      { experience.description }
+                    </CardDescription>
+
+                    <Accordion type="single" collapsible>
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger className="text-white">Click here for more details</AccordionTrigger>
+                        <AccordionContent className="text-neutral-400">
+                          <ul className="list-disc ml-5">
+                            { experience.details.map((detail, index) => (
+                              <li key={index} className="text-sm">{ detail.detail }</li>
+                            )) }
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex space-x-4 text-sm text-muted-foreground text-white">
+                    <p>
+                      { experience.duration }
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </main>
       </section>
@@ -150,7 +199,7 @@ export default function Home() {
             <h1 className="text-3xl text-white">My Galery</h1>
             <p className="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas, quis assumenda velit tempore ducimus!</p>
           </div>
-          <div className="grid sm:grid-cols-3 grid-cols-1 gap-4">
+          <div className="grid sm:grid-cols-3 grid-cols-2 items-center justify-center mx-auto gap-4">
             <Image
               src="/exa1.jpg"
               width={700}
