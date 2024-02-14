@@ -13,9 +13,9 @@ export default function Home() {
       title: "Project 1",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
       icons: [
-        { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: SiNextdotjs, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-200" },
+        { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiNextdotjs, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-700" },
       ],
     },
     {
@@ -23,10 +23,10 @@ export default function Home() {
       title: "Project 2",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
       icons: [
-        { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: SiNextdotjs, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-200" },
+        { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiNextdotjs, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-700" },
       ],
     },
     {
@@ -34,199 +34,130 @@ export default function Home() {
       title: "Project 3",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
       icons: [
-        { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-200" },
-        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-200" },
+        { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-700" },
       ],
     },
   ]
 
   const experiences = [
     {
-      title: "Experience 1",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      title: "Front-End Developer",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo laborum impedit fugiat tempore aliquam, reprehenderit saepe iste omnis ipsa unde modi, eveniet cumque accusamus tempora dicta quas vel earum aliquid!",
       duration: "6 Month Internship",
       details: [
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Create new features for the finplan.id website using API, Vue JS and Sass such as: stock broker, admin management dashboard, customer service integration." },
+        { detail: "Collaborate with the application development team and stakeholders for website needs." },
+        { detail: "Participated in sprint planning up to sprint retrospective in the website development stage." },
+        { detail: "Attend weekly and monthly sprint meetings regarding website development progress." },
       ],
     },
     {
-      title: "Experience 2",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      title: "Front-End Web Class Manager",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo laborum impedit fugiat tempore aliquam, reprehenderit saepe iste omnis ipsa unde modi, eveniet cumque accusamus tempora dicta quas vel earum aliquid!",
       duration: "7 Month Internship",
       details: [
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Prepare presentation needs, pretest-posttest, feedback forms, modules, online materials, indicators assessments, assessment sheets, monitoring and coordination sheets, and LMS." },
+        { detail: "Coordinate daily class implementation and guide 17 members throughout the learning program (Onboarding, Learning journey progress, weekly assignments, monthly projects and final exams)." },
+        { detail: "Collaborate with project managers, mentors and learning designers for continuity and smoothness bootcamp for the next 6 months." },
       ],
     },
     {
-      title: "Experience 3",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
-      duration: "3 Month Internship",
+      title: "Bangkit Academy 2023 Cohort - Cloud Computing",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo laborum impedit fugiat tempore aliquam, reprehenderit saepe iste omnis ipsa unde modi, eveniet cumque accusamus tempora dicta quas vel earum aliquid!",
+      duration: "6 Month Internship",
       details: [
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
-        { detail: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit." },
+        { detail: "Learn about the basics of Web Development Programming such as HTML, CSS and Javascript." },
+        { detail: "Learn about the basics of Cloud Computing on Google Cloud." },
+        { detail: "Create a Capstone Project, namely the Pemasokita application, namely a plant quality scanning application using React Js, Tensorflow Js, Kotlin and Google Cloud." },
       ],
     },
   ]
 
   return (
     <>
-      {/* <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
-        <header className="max-w-5xl w-full gap-5 font-mono">
-          <div className="flex flex-col items-center">
-            <div className="text-white flex flex-col gap-2 text-center">
-              <h1 className="text-3xl">Hi There👋🏻</h1>
-              <h3>I am Kalam Mahardhika as <span className="text-sky-400">Computer Science Student & Software Developer</span></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, incidunt error? Ad, harum quis ab voluptas repellat quos architecto voluptatibus labore delectus. Distinctio velit tempore odit et quas ex totam labore odio! Deleniti ducimus qui assumenda iste, inventore quo commodi.</p>
+      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-100">
+        <header className="max-w-5xl w-full gap-5 font-body">
+          <div className="flex flex-col gap-8">
+            {/* <div className="flex flex-col text-center">
+              <h1 className="text-3xl font-bold text-neutral-700">Hi I&apos;am Kalam Mahardhika</h1>
+              <h3 className="text-lg font-medium text-neutral-500">Software Developer Enthusiast</h3>
+            </div> */}
+            <div className="flex items-center my-10">
+              <div className="w-[70%]">
+                <h3 className="text-2xl font-medium text-neutral-500">Hi There👋🏻</h3>
+                <h1 className="text-[3rem] font-bold text-neutral-700">I&apos;am Kalam Mahardhika</h1>
+                <h1 className="text-[3rem] font-bold text-neutral-700">Software Engineer</h1>
+              </div>
+              <div className="w-[30%]">
+                <p className="text-sm text-neutral-500 tracking-wide leading-loose">&#34;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus sapiente exercitationem deserunt eos omnis pariatur quisquam commodi, libero alias quaerat.&#34;</p>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <Button className="mt-4" variant="outline">
-                <MdDownload className="h-4 w-4 mr-2" /> Download CV
-              </Button>
-              <Button className="mt-4 bg-sky-600 hover:bg-sky-700">
-                <FaLinkedin className="h-4 w-4 mr-2" /> Go to Linkedin
-              </Button>
+
+            <div className="flex flex-col gap-8">
+              {experiences.map((experience, index) => (
+                <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                  <CardHeader className="flex flex-col items-start gap-4 space-y-0">
+                    <div className="space-y-1">
+                      <p className="font-medium text-neutral-700 text-xl">{ experience.title }</p>
+                      <CardDescription className="text-neutral-500">
+                        { experience.description }
+                      </CardDescription>
+
+                      <Accordion type="single" collapsible>
+                        <AccordionItem value="item-1">
+                          <AccordionTrigger className="text-neutral-700">Click here for more details</AccordionTrigger>
+                          <AccordionContent className="text-neutral-500">
+                            <ul className="list-disc ml-5">
+                              { experience.details.map((detail, index) => (
+                                <li key={index} className="text-sm">{ detail.detail }</li>
+                              )) }
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex space-x-4 text-sm text-muted-foreground text-neutral-700">
+                      <p>
+                        { experience.duration }
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8">
+              {projects.map((project, index) => (
+                <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                  <CardHeader>
+                    <Image
+                      src={project.imageSrc}
+                      width={700}
+                      height={700}
+                      alt="Picture of the author"
+                      className="rounded-sm shadow-neutral-300 shadow-sm"
+                    />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
+                    <CardDescription className="text-neutral-500">{project.description}</CardDescription>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="text-neutral-500 flex gap-2">
+                    {project.icons.map((iconObject, index) => (
+                      <iconObject.icon key={index} className={iconObject.className} />
+                    ))}
+                    </div>
+                  </CardFooter>
+                </Card>
+              ))}
             </div>
           </div>
         </header>
-        <MdKeyboardDoubleArrowDown className="h-[2rem] w-[2rem] text-white text-center absolute bottom-10 animate-bounce"/>
-      </section> */}
-
-      <section className="flex min-h-screen flex-col  items-center py-8 bg-neutral-900 sm:px-0 px-4">
-        <header className="max-w-5xl w-full flex flex-col gap-5 font-mono mt-10">
-          <h1 className="sm:text-4xl text-xl text-white text-center">Hi There I am Kalam Mahardhika👋🏻</h1>
-          <div className="relative w-full sm:h-[45vh] rounded-sm flex justify-center">
-            <Image
-              src="/hero.jpg"
-              width={700}
-              height={700}
-              alt="Hero"
-              className="rounded-sm w-full h-full bg-center object-cover"
-            />
-            {/* <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-sky-700 opacity-85 rounded-sm"></div> */}
-          </div>
-          <h1 className="sm:text-md text-neutral-400 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa minus repellat laudantium ipsum porro dolores quisquam quibusdam omnis quia velit ullam animi autem inventore delectus numquam rem eos, nihil cumque!</h1>
-        </header>
-        <MdKeyboardDoubleArrowDown className="h-[2rem] w-[2rem] text-white text-center absolute bottom-10 animate-bounce"/>
-      </section>
-
-      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
-        <main className="max-w-5xl w-full flex flex-col gap-y-10 font-mono">
-          <div className="flex flex-col text-center gap-3">
-            <h1 className="text-3xl text-white">My Projects</h1>
-            <p className="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas, quis assumenda velit tempore ducimus!</p>
-          </div>
-          <div className="grid sm:grid-cols-3 grid-cols-1 gap-4">
-            {projects.map((project, index) => (
-              <Card key={index} className="border-none shadow-sm shadow-sky-600 bg-neutral-800">
-                <CardHeader>
-                  <Image
-                    src={project.imageSrc}
-                    width={700}
-                    height={700}
-                    alt="Picture of the author"
-                    className="rounded-sm transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
-                  />
-                </CardHeader>
-                <CardContent>
-                  <p className="font-medium text-white text-xl">{project.title}</p>
-                  <CardDescription className="text-neutral-400">{project.description}</CardDescription>
-                </CardContent>
-                <CardFooter>
-                  <div className="text-white flex gap-2">
-                  {project.icons.map((iconObject, index) => (
-                    <iconObject.icon key={index} className={iconObject.className} />
-                  ))}
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </main>
-      </section>
-
-      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
-        <main className="max-w-5xl w-full flex flex-col gap-y-10 font-mono">
-          <div className="flex flex-col text-center gap-3">
-            <h1 className="text-3xl text-white">My Experience</h1>
-            <p className="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas, quis assumenda velit tempore ducimus!</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            {experiences.map((experience, index) => (
-              <Card key={index} className="border-none shadow-sm shadow-sky-600 bg-neutral-800">
-                <CardHeader className="flex flex-col items-start gap-4 space-y-0">
-                  <div className="space-y-1">
-                    <p className="font-medium text-white text-xl">{ experience.title }</p>
-                    <CardDescription className="text-neutral-400">
-                      { experience.description }
-                    </CardDescription>
-
-                    <Accordion type="single" collapsible>
-                      <AccordionItem value="item-1">
-                        <AccordionTrigger className="text-white">Click here for more details</AccordionTrigger>
-                        <AccordionContent className="text-neutral-400">
-                          <ul className="list-disc ml-5">
-                            { experience.details.map((detail, index) => (
-                              <li key={index} className="text-sm">{ detail.detail }</li>
-                            )) }
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex space-x-4 text-sm text-muted-foreground text-white">
-                    <p>
-                      { experience.duration }
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </main>
-      </section>
-
-      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
-        <main className="max-w-5xl w-full flex flex-col gap-y-10 font-mono">
-          <div className="flex flex-col text-center gap-3">
-            <h1 className="text-3xl text-white">My Galery</h1>
-            <p className="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptas, quis assumenda velit tempore ducimus!</p>
-          </div>
-          <div className="grid sm:grid-cols-3 grid-cols-2 items-center justify-center mx-auto gap-4">
-            <Image
-              src="/exa1.jpg"
-              width={700}
-              height={700}
-              alt="Hero"
-              className="rounded-sm w-[20rem] aspect-[3/4] bg-cover object-cover hover:opacity-80 hover:scale-105 hover:-translate-y-1 transition ease-in-out delay-150 duration-300"
-            />
-            <Image
-              src="/exa1.jpg"
-              width={700}
-              height={700}
-              alt="Hero"
-              className="rounded-sm w-[20rem] aspect-[3/4] bg-cover object-cover hover:opacity-80 hover:scale-105 hover:-translate-y-1 transition ease-in-out delay-150 duration-300"
-            />
-            <Image
-              src="/exa1.jpg"
-              width={700}
-              height={700}
-              alt="Hero"
-              className="rounded-sm w-[20rem] aspect-[3/4] bg-cover object-cover hover:opacity-80 hover:scale-105 hover:-translate-y-1 transition ease-in-out delay-150 duration-300"
-            />
-          </div>
-        </main>
-      </section>
-
-      <section className="flex flex-col justify-center items-center py-8 bg-neutral-900 sm:px-0 px-4">
-        <p className="text-white font-mono">Made with random inspiration🐲</p>
       </section>
     </>
   )
