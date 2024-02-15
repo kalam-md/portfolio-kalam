@@ -2,9 +2,30 @@ import { MdDownload, MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaLaravel } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/ui/accordion"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import Image from 'next/image'
+import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   const projects = [
@@ -77,32 +98,52 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-100">
+      <Head>
+        <title>Welcome to my site</title>
+        <meta property="og:title" content="Welcome to my site" key="title" />
+      </Head>
+      
+      <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-100 px-4 sm:px-0">
         <header className="max-w-5xl w-full gap-5 font-body">
           <div className="flex flex-col gap-8">
-            {/* <div className="flex flex-col text-center">
-              <h1 className="text-3xl font-bold text-neutral-700">Hi I&apos;am Kalam Mahardhika</h1>
-              <h3 className="text-lg font-medium text-neutral-500">Software Developer Enthusiast</h3>
-            </div> */}
-            <div className="flex items-center my-10">
-              <div className="w-[70%]">
-                <h3 className="text-2xl font-medium text-neutral-500">Hi There👋🏻</h3>
-                <h1 className="text-[3rem] font-bold text-neutral-700">I&apos;am Kalam Mahardhika</h1>
-                <h1 className="text-[3rem] font-bold text-neutral-700">Software Engineer</h1>
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 items-center my-10">
+              <div className="sm:w-[70%]">
+                <h3 className="text-lg leading-8 font-medium text-neutral-600">Hi There👋🏻</h3>
+                <h1 className="text-[3rem] font-bold tracking-tight text-neutral-700">I&apos;am Kalam Mahardhika</h1>
+                <h1 className="text-[3rem] font-bold tracking-tight text-neutral-700">Software Engineer</h1>
+
+                <div className="mt-5 flex gap-2">
+                  <Link href="#">
+                    <Button>
+                      <MdDownload className="mr-2 h-4 w-4" /> Download CV
+                    </Button>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/kalammd/">
+                    <Button variant="linkedin">
+                      <FaLinkedin className="mr-2 h-4 w-4" /> Linkedin
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              <div className="w-[30%]">
-                <p className="text-sm text-neutral-500 tracking-wide leading-loose">&#34;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus sapiente exercitationem deserunt eos omnis pariatur quisquam commodi, libero alias quaerat.&#34;</p>
+              <div className="sm:w-[30%]">
+                <p className="text-sm text-neutral-500 tracking-wide leading-loose">&#34;Solve problems not only with coding, but with other problems too, just ignore the quote haha.&#34;</p>
               </div>
             </div>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 border-t border-neutral-200 py-10">
+              <div className="max-w-2xl lg:mx-0">
+                <h2 className="text-3xl font-bold tracking-tight text-neutral-700 sm:text-4xl">My Experience</h2>
+                <p className="mt-2 text-lg leading-8 text-neutral-600">
+                  Learn how to grow my career at work.
+                </p>
+              </div>
               {experiences.map((experience, index) => (
-                <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50">
                   <CardHeader className="flex flex-col items-start gap-4 space-y-0">
                     <div className="space-y-1">
-                      <p className="font-medium text-neutral-700 text-xl">{ experience.title }</p>
+                      <p className="font-medium text-neutral-700 text-xl">{experience.title}</p>
                       <CardDescription className="text-neutral-500">
-                        { experience.description }
+                        {experience.description}
                       </CardDescription>
 
                       <Accordion type="single" collapsible>
@@ -110,9 +151,9 @@ export default function Home() {
                           <AccordionTrigger className="text-neutral-700">Click here for more details</AccordionTrigger>
                           <AccordionContent className="text-neutral-500">
                             <ul className="list-disc ml-5">
-                              { experience.details.map((detail, index) => (
-                                <li key={index} className="text-sm">{ detail.detail }</li>
-                              )) }
+                              {experience.details.map((detail, index) => (
+                                <li key={index} className="text-sm">{detail.detail}</li>
+                              ))}
                             </ul>
                           </AccordionContent>
                         </AccordionItem>
@@ -122,7 +163,7 @@ export default function Home() {
                   <CardContent>
                     <div className="flex space-x-4 text-sm text-muted-foreground text-neutral-700">
                       <p>
-                        { experience.duration }
+                        {experience.duration}
                       </p>
                     </div>
                   </CardContent>
@@ -130,31 +171,39 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8">
-              {projects.map((project, index) => (
-                <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
-                  <CardHeader>
-                    <Image
-                      src={project.imageSrc}
-                      width={700}
-                      height={700}
-                      alt="Picture of the author"
-                      className="rounded-sm shadow-neutral-300 shadow-sm"
-                    />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
-                    <CardDescription className="text-neutral-500">{project.description}</CardDescription>
-                  </CardContent>
-                  <CardFooter>
-                    <div className="text-neutral-500 flex gap-2">
-                    {project.icons.map((iconObject, index) => (
-                      <iconObject.icon key={index} className={iconObject.className} />
-                    ))}
-                    </div>
-                  </CardFooter>
-                </Card>
-              ))}
+            <div className="flex flex-col gap-8 border-t border-neutral-200 py-10">
+              <div className="max-w-2xl lg:mx-0">
+                <h2 className="text-3xl font-bold tracking-tight text-neutral-700 sm:text-4xl">My Project</h2>
+                <p className="mt-2 text-lg leading-8 text-neutral-600">
+                  Create this things for grow up my skill.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 grid-cols-1 gap-8">
+                {projects.map((project, index) => (
+                  <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                    <CardHeader>
+                      <Image
+                        src={project.imageSrc}
+                        width={700}
+                        height={700}
+                        alt="Picture of the author"
+                        className="rounded-sm shadow-neutral-300 shadow-sm"
+                      />
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
+                      <CardDescription className="text-neutral-500">{project.description}</CardDescription>
+                    </CardContent>
+                    <CardFooter>
+                      <div className="text-neutral-500 flex gap-2">
+                        {project.icons.map((iconObject, index) => (
+                          <iconObject.icon key={index} className={iconObject.className} />
+                        ))}
+                      </div>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </header>
