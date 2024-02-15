@@ -1,3 +1,5 @@
+"use client";
+
 import { MdDownload, MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaLaravel } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
@@ -26,6 +28,7 @@ import {
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from "framer-motion"
 
 export default function Home() {
   const projects = [
@@ -96,6 +99,28 @@ export default function Home() {
     },
   ]
 
+  const slideUp = {
+    init: {
+      y: "100%"
+    },
+    open: (i: any) => ({
+      y: "0%", 
+      transition: {duration: 1, delay: 0.2 * i}
+    })
+  }
+
+  const scrollUp = {
+    init: {
+      opacity: 0,
+      y: "100%"
+    },
+    show: (i: any) => ({
+      opacity: 1, 
+      y: "0%", 
+      transition: {duration: 1, delay: 0.2 * i}
+    })
+  }
+
   return (
     <>
       <Head>
@@ -108,100 +133,166 @@ export default function Home() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 items-center my-10">
               <div className="sm:w-[70%]">
-                <h3 className="text-lg leading-8 font-medium text-neutral-600">Hi There👋🏻</h3>
-                <h1 className="text-[3rem] font-bold tracking-tight text-neutral-700">I&apos;am Kalam Mahardhika</h1>
-                <h1 className="text-[3rem] font-bold tracking-tight text-neutral-700">Software Engineer</h1>
+                <div className="overflow-hidden">
+                  <motion.h3
+                    variants={slideUp}
+                    initial={"init"}
+                    animate={"open"}
+                    custom={1}
+                    className="text-lg leading-8 font-medium text-neutral-600 translate-y-[100%]">Hi There👋🏻</motion.h3>
+                </div>
+                <div className="overflow-hidden">
+                  <motion.h1
+                    variants={slideUp}
+                    initial={"init"}
+                    animate={"open"}
+                    custom={1}
+                    className="text-[3rem] font-bold tracking-tight text-neutral-700 translate-y-[100%]">I&apos;am Kalam Mahardhika</motion.h1>
+                </div>
+                <div className="overflow-hidden">
+                  <motion.h1
+                    variants={slideUp}
+                    initial={"init"}
+                    animate={"open"}
+                    custom={2}
+                    className="text-[3rem] font-bold tracking-tight text-neutral-700 translate-y-[100%]">Software Engineer</motion.h1>
+                </div>
 
-                <div className="mt-5 flex gap-2">
+                <div className="mt-5 flex gap-2 overflow-hidden">
                   <Link href="#">
-                    <Button>
-                      <MdDownload className="mr-2 h-4 w-4" /> Download CV
-                    </Button>
+                    <motion.div
+                      variants={slideUp}
+                      initial={"init"}
+                      animate={"open"}
+                      custom={3} 
+                      className="translate-y-[100%]">
+                      <Button>
+                        <MdDownload className="mr-2 h-4 w-4" /> Download CV
+                      </Button>
+                    </motion.div>
                   </Link>
                   <Link href="https://www.linkedin.com/in/kalammd/">
-                    <Button variant="linkedin">
-                      <FaLinkedin className="mr-2 h-4 w-4" /> Linkedin
-                    </Button>
+                    <motion.div
+                      variants={slideUp}
+                      initial={"init"}
+                      animate={"open"}
+                      custom={4} 
+                      className="translate-y-[100%]">
+                      <Button variant="linkedin">
+                        <FaLinkedin className="mr-2 h-4 w-4" /> Linkedin
+                      </Button>
+                    </motion.div>
                   </Link>
                 </div>
               </div>
-              <div className="sm:w-[30%]">
-                <p className="text-sm text-neutral-500 tracking-wide leading-loose">&#34;Solve problems not only with coding, but with other problems too, just ignore the quote haha.&#34;</p>
+              <div className="sm:w-[30%] overflow-hidden">
+                <motion.p
+                  variants={slideUp}
+                  initial={"init"}
+                  animate={"open"}
+                  custom={2} 
+                  className="text-sm text-neutral-500 tracking-wide leading-loose translate-y-[100%]">&#34;Solve problems not only with coding, but with other problems too, just ignore the quote haha.&#34;</motion.p>
               </div>
             </div>
 
             <div className="flex flex-col gap-8 border-t border-neutral-200 py-10">
-              <div className="max-w-2xl lg:mx-0">
+              <motion.div 
+                variants={scrollUp}
+                initial={"init"}
+                custom={1}
+                whileInView={"show"}
+                className="max-w-2xl lg:mx-0">
                 <h2 className="text-3xl font-bold tracking-tight text-neutral-700 sm:text-4xl">My Experience</h2>
                 <p className="mt-2 text-lg leading-8 text-neutral-600">
                   Learn how to grow my career at work.
                 </p>
-              </div>
+              </motion.div>
               {experiences.map((experience, index) => (
-                <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50">
-                  <CardHeader className="flex flex-col items-start gap-4 space-y-0">
-                    <div className="space-y-1">
-                      <p className="font-medium text-neutral-700 text-xl">{experience.title}</p>
-                      <CardDescription className="text-neutral-500">
-                        {experience.description}
-                      </CardDescription>
+                <motion.div 
+                  variants={scrollUp}
+                  initial={"init"}
+                  custom={index}
+                  whileInView={"show"}
+                  className="translate-y-[100%]" 
+                  key={index}>
+                  <Card className="border-none shadow-md shadow-neutral-300 bg-neutral-50">
+                    <CardHeader className="flex flex-col items-start gap-4 space-y-0">
+                      <div className="space-y-1">
+                        <p className="font-medium text-neutral-700 text-xl">{experience.title}</p>
+                        <CardDescription className="text-neutral-500">
+                          {experience.description}
+                        </CardDescription>
 
-                      <Accordion type="single" collapsible>
-                        <AccordionItem value="item-1">
-                          <AccordionTrigger className="text-neutral-700">Click here for more details</AccordionTrigger>
-                          <AccordionContent className="text-neutral-500">
-                            <ul className="list-disc ml-5">
-                              {experience.details.map((detail, index) => (
-                                <li key={index} className="text-sm">{detail.detail}</li>
-                              ))}
-                            </ul>
-                          </AccordionContent>
-                        </AccordionItem>
-                      </Accordion>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex space-x-4 text-sm text-muted-foreground text-neutral-700">
-                      <p>
-                        {experience.duration}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                        <Accordion type="single" collapsible>
+                          <AccordionItem value="item-1">
+                            <AccordionTrigger className="text-neutral-700">Click here for more details</AccordionTrigger>
+                            <AccordionContent className="text-neutral-500">
+                              <ul className="list-disc ml-5">
+                                {experience.details.map((detail, index) => (
+                                  <li key={index} className="text-sm">{detail.detail}</li>
+                                ))}
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex space-x-4 text-sm text-muted-foreground text-neutral-700">
+                        <p>
+                          {experience.duration}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
 
             <div className="flex flex-col gap-8 border-t border-neutral-200 py-10">
-              <div className="max-w-2xl lg:mx-0">
+              <motion.div 
+                variants={scrollUp}
+                initial={"init"}
+                custom={1}
+                whileInView={"show"}
+                className="max-w-2xl lg:mx-0">
                 <h2 className="text-3xl font-bold tracking-tight text-neutral-700 sm:text-4xl">My Project</h2>
                 <p className="mt-2 text-lg leading-8 text-neutral-600">
                   Create this things for grow up my skill.
                 </p>
-              </div>
+              </motion.div>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-8">
                 {projects.map((project, index) => (
-                  <Card key={index} className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
-                    <CardHeader>
-                      <Image
-                        src={project.imageSrc}
-                        width={700}
-                        height={700}
-                        alt="Picture of the author"
-                        className="rounded-sm shadow-neutral-300 shadow-sm"
-                      />
-                    </CardHeader>
-                    <CardContent>
-                      <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
-                      <CardDescription className="text-neutral-500">{project.description}</CardDescription>
-                    </CardContent>
-                    <CardFooter>
-                      <div className="text-neutral-500 flex gap-2">
-                        {project.icons.map((iconObject, index) => (
-                          <iconObject.icon key={index} className={iconObject.className} />
-                        ))}
-                      </div>
-                    </CardFooter>
-                  </Card>
+                  <motion.div 
+                    variants={scrollUp}
+                    initial={"init"}
+                    custom={index}
+                    whileInView={"show"}
+                    className="translate-y-[100%]"  
+                    key={index}>
+                    <Card className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                      <CardHeader>
+                        <Image
+                          src={project.imageSrc}
+                          width={700}
+                          height={700}
+                          alt="Picture of the author"
+                          className="rounded-sm shadow-neutral-300 shadow-sm"
+                        />
+                      </CardHeader>
+                      <CardContent>
+                        <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
+                        <CardDescription className="text-neutral-500">{project.description}</CardDescription>
+                      </CardContent>
+                      <CardFooter>
+                        <div className="text-neutral-500 flex gap-2">
+                          {project.icons.map((iconObject, index) => (
+                            <iconObject.icon key={index} className={iconObject.className} />
+                          ))}
+                        </div>
+                      </CardFooter>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
             </div>
