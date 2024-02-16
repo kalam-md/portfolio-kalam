@@ -1,7 +1,7 @@
 "use client";
 
-import { MdDownload, MdKeyboardDoubleArrowDown } from "react-icons/md";
-import { FaLinkedin, FaGithub, FaLaravel } from "react-icons/fa";
+import { MdDownload, MdOutlineEmail } from "react-icons/md";
+import { FaLinkedin, FaGithub, FaLaravel, FaMapMarkedAlt } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import {
@@ -68,8 +68,8 @@ export default function Home() {
   const experiences = [
     {
       title: "Front-End Developer",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo laborum impedit fugiat tempore aliquam, reprehenderit saepe iste omnis ipsa unde modi, eveniet cumque accusamus tempora dicta quas vel earum aliquid!",
-      duration: "6 Month Internship",
+      description: "I took part in an internship that I got information about on Linkedin in the position of frontend website developer, here I learned and worked using Vue JS and Scrum development methodology.",
+      duration: "6 Month Internship at Finplan.ID",
       details: [
         { detail: "Create new features for the finplan.id website using API, Vue JS and Sass such as: stock broker, admin management dashboard, customer service integration." },
         { detail: "Collaborate with the application development team and stakeholders for website needs." },
@@ -79,8 +79,8 @@ export default function Home() {
     },
     {
       title: "Front-End Web Class Manager",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo laborum impedit fugiat tempore aliquam, reprehenderit saepe iste omnis ipsa unde modi, eveniet cumque accusamus tempora dicta quas vel earum aliquid!",
-      duration: "7 Month Internship",
+      description: "I took part in this internship not as a developer, but as a mentor or moderator who guides the continuation of the web frontend bootcamp class for 6 months.",
+      duration: "7 Month Internship at Dibimbing.ID",
       details: [
         { detail: "Prepare presentation needs, pretest-posttest, feedback forms, modules, online materials, indicators assessments, assessment sheets, monitoring and coordination sheets, and LMS." },
         { detail: "Coordinate daily class implementation and guide 17 members throughout the learning program (Onboarding, Learning journey progress, weekly assignments, monthly projects and final exams)." },
@@ -89,13 +89,31 @@ export default function Home() {
     },
     {
       title: "Bangkit Academy 2023 Cohort - Cloud Computing",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo laborum impedit fugiat tempore aliquam, reprehenderit saepe iste omnis ipsa unde modi, eveniet cumque accusamus tempora dicta quas vel earum aliquid!",
-      duration: "6 Month Internship",
+      description: "I took part in an internship or independent study activity at the Merdeka Campus, taking the cloud computing learning path for 6 months.",
+      duration: "6 Month Internship at Bangkit Academy 2023",
       details: [
         { detail: "Learn about the basics of Web Development Programming such as HTML, CSS and Javascript." },
         { detail: "Learn about the basics of Cloud Computing on Google Cloud." },
         { detail: "Create a Capstone Project, namely the Pemasokita application, namely a plant quality scanning application using React Js, Tensorflow Js, Kotlin and Google Cloud." },
       ],
+    },
+  ]
+
+  const contacts = [
+    {
+      title: "Location",
+      description: "Bandung, Indonesia",
+      icon: FaMapMarkedAlt
+    },
+    {
+      title: "Mail",
+      description: "kalammahardhika1002@gmail.com",
+      icon: MdOutlineEmail
+    },
+    {
+      title: "Linkedin",
+      description: "Kalam Mahardhika",
+      icon: FaLinkedin
     },
   ]
 
@@ -159,7 +177,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-5 flex gap-2 overflow-hidden">
-                  <Link href="#">
+                  <Link href="https://drive.google.com/file/d/127XE1YIkCm53vc17tKpV8zd_8UUnZ079/view?usp=sharing" target="_blank">
                     <motion.div
                       variants={slideUp}
                       initial={"init"}
@@ -171,7 +189,7 @@ export default function Home() {
                       </Button>
                     </motion.div>
                   </Link>
-                  <Link href="https://www.linkedin.com/in/kalammd/">
+                  <Link href="https://www.linkedin.com/in/kalammd/" target="_blank">
                     <motion.div
                       variants={slideUp}
                       initial={"init"}
@@ -292,6 +310,44 @@ export default function Home() {
                         </div>
                       </CardFooter>
                     </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-8 border-t border-neutral-200 py-10">
+              <div className="lg:mx-0 overflow-hidden">
+                <motion.h2
+                  variants={slideUp}
+                  initial={"init"}
+                  animate={"open"}
+                  custom={3} 
+                  className="text-3xl font-bold tracking-tight text-neutral-700 sm:text-4xl translate-y-[100%]">Dont be shy. Hit me up😎</motion.h2>
+                <motion.p 
+                  variants={slideUp}
+                  initial={"init"}
+                  animate={"open"}
+                  custom={3} 
+                  className="mt-2 text-lg leading-8 text-neutral-600 translate-y-[100%]">
+                  I&apos;am currently looking for new opportunities, my inbox alwas open. Whether you have question or just want to say hi, i&apos;ll try my best to get back to you!.
+                </motion.p>
+              </div>
+              <div className="grid grid-cols-1 gap-4">
+                {contacts.map((contact, index) => (
+                  <motion.div 
+                    variants={scrollUp}
+                    initial={"init"}
+                    custom={index}
+                    whileInView={"show"}
+                    key={index} 
+                    className="flex items-center gap-4 translate-y-[100%]">
+                    <Link href="#" className="flex border shadow-md border-neutral-300 bg-neutral-50 p-4 rounded-full">
+                      <contact.icon className="h-8 w-8" />
+                    </Link>
+                    <div className="flex flex-col">
+                      <p className="text-neutral-700 font-semibold">{contact.title}</p>
+                      <p className="text-sm">{contact.description}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
