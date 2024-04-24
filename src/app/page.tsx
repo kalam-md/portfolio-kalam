@@ -2,7 +2,7 @@
 
 import { MdDownload, MdOutlineEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaLaravel, FaMapMarkedAlt } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiReact, SiTailwindcss } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -34,33 +34,35 @@ export default function Home() {
   const projects = [
     {
       imageSrc: "/project1.png",
-      title: "Project 1",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      path: 'https://github.com/kalam-md/PPL-Bursa-Transfer/',
+      title: "BUSER App",
+      description: "BUSER (Bursa Transfer) adalah sebuah aplikasi untuk memanagemen transfer pemain sepakbola di indonesia.",
       icons: [
         { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-700" },
-        { icon: SiNextdotjs, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-700" },
         { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-700" },
       ],
     },
     {
-      imageSrc: "/project1.png",
-      title: "Project 2",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      imageSrc: "/project2.png",
+      path: 'https://prung.netlify.app/',
+      title: "Prung Website",
+      description: "Prung adalah merek pakaian yang mengambil inspirasi dari bahasa tradisional warga Jawa Barat.",
       icons: [
         { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-700" },
-        { icon: SiNextdotjs, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiReact, className: "h-7 w-7 hover:text-neutral-700" },
         { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-700" },
-        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-700" },
       ],
     },
     {
-      imageSrc: "/project1.png",
-      title: "Project 3",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta consequuntur consectetur at beatae aspernatur veniam.",
+      imageSrc: "/project3.png",
+      path: 'https://exitto.netlify.app/',
+      title: "Importir Laptop Website",
+      description: "Sebuah website yang menyediakan jasa service laptop juga menjual beberapa laptop second.",
       icons: [
         { icon: FaGithub, className: "h-7 w-7 hover:text-neutral-700" },
+        { icon: SiReact, className: "h-7 w-7 hover:text-neutral-700" },
         { icon: SiTailwindcss, className: "h-7 w-7 hover:text-neutral-700" },
-        { icon: FaLaravel, className: "h-7 w-7 hover:text-neutral-700" },
       ],
     },
   ]
@@ -147,7 +149,7 @@ export default function Home() {
       </Head>
       
       <section className="flex min-h-screen flex-col justify-center items-center py-8 bg-neutral-100 px-4 sm:px-0">
-        <header className="max-w-5xl w-full gap-5 font-body">
+        <div className="max-w-5xl w-full gap-5 font-body">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 items-center my-10">
               <div className="sm:w-[70%]">
@@ -288,28 +290,30 @@ export default function Home() {
                     whileInView={"show"}
                     className="translate-y-[100%]"  
                     key={index}>
-                    <Card className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
-                      <CardHeader>
-                        <Image
-                          src={project.imageSrc}
-                          width={700}
-                          height={700}
-                          alt="Picture of the author"
-                          className="rounded-sm shadow-neutral-300 shadow-sm"
-                        />
-                      </CardHeader>
-                      <CardContent>
-                        <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
-                        <CardDescription className="text-neutral-500">{project.description}</CardDescription>
-                      </CardContent>
-                      <CardFooter>
-                        <div className="text-neutral-500 flex gap-2">
-                          {project.icons.map((iconObject, index) => (
-                            <iconObject.icon key={index} className={iconObject.className} />
-                          ))}
-                        </div>
-                      </CardFooter>
-                    </Card>
+                    <Link href={project.path}>
+                      <Card className="border-none shadow-md shadow-neutral-300 bg-neutral-50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                        <CardHeader>
+                          <Image
+                            src={project.imageSrc}
+                            width={700}
+                            height={700}
+                            alt="Picture of the author"
+                            className="rounded-sm shadow-neutral-300 shadow-sm"
+                          />
+                        </CardHeader>
+                        <CardContent>
+                          <p className="font-medium text-neutral-700 text-xl">{project.title}</p>
+                          <CardDescription className="text-neutral-500">{project.description}</CardDescription>
+                        </CardContent>
+                        <CardFooter>
+                          <div className="text-neutral-500 flex gap-2">
+                            {project.icons.map((iconObject, index) => (
+                              <iconObject.icon key={index} className={iconObject.className} />
+                            ))}
+                          </div>
+                        </CardFooter>
+                      </Card>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -353,7 +357,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </header>
+        </div>
       </section>
     </>
   )
